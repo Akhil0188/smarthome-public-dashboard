@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: akhil-smarthome-dashboard
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: BLYNK_SERVER
+        value: blr1.blynk.cloud
+      - key: BLYNK_AUTH_TOKEN
+        sync: false
